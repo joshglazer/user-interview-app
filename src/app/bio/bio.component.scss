@@ -1,0 +1,15 @@
+$primary-color: blue;
+$font-size: 25px;
+
+.profileName {
+    color: $primary-color;
+}
+
+.bio {
+    font-size: $font-size;
+    text-align: left;
+    
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+}

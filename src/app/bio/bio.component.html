@@ -1,0 +1,39 @@
+<div>
+    <ol>
+        <li>
+            Fill out your name
+        </li>
+        <li>
+            Add a profile picture of yourself
+        </li>
+        <li>
+            If you have an online portfolio, git repo, or Linkedin link the profile pic to it. If not, link profile pic to W3C. Make sure it opens in a new tab.
+        </li>
+        <li>
+            Write a 3 sentence biography about yourself. Make sure it is in the Typescript file and display it in the div with class bio.
+        </li>
+        <li>
+            Center your bio on the screen, and make sure its width is 65% of the screen.
+        </li>
+        <li>
+            Now we are going to start the test, create a button that navigates to a subfolder called api. Make sure this button is 508 compliant.
+        </li>
+    </ol>
+</div>
+<div style="text-align:center">
+    <h2>My name is 
+        <span class="profileName">
+            {{profile_name}}
+        </span>
+    </h2>
+    <img src="{{profile_pic}}" width="250px" height="250px" alt=""/>
+    <div class="bio">
+        <!-- BIO ABOUT YOURSELF -->
+        {{ bio }}
+    </div>
+</div>
+<a routerLink="/api" routerLinkActive="active">
+    <div>
+        Api
+    </div>
+</a>

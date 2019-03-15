@@ -1,0 +1,17 @@
+
+table {
+    border: 1px solid black;
+    text-align: left;
+    table-layout: fixed;
+    tbody {
+        td:nth-of-type(2) {
+            color: blue;
+        }
+    }
+    tfoot {
+        td {
+            font-weight: bold;
+            color: red;
+        }
+    }
+}

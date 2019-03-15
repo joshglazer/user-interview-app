@@ -1,0 +1,66 @@
+<div>
+    <ol>
+        <li>
+            Now we are going to start the test, create a button that navigates to a subfolder called api. Make sure this button is 508 compliant.
+        </li>
+        <li>
+            Make an API get request for all the data at <u>https://data.baltimorecity.gov/resource/qqcv-ihn5.json</u>. This data will return all vacant buildings by neighborgood in Baltimore.
+        </li>
+        <li>
+            Add an error handler.
+        </li>
+        <li>
+            When request comes back display a <u>table</u> of all unique neighborhoods with the number of vacant buildings next to it. The table headers should be neighborhood and vacancies<br/>
+            Ex: Sandtown | 56
+        </li>
+        <li>
+            The table should display Total of vacancies in the bottom of the table
+        </li>
+        <li>
+            Style the table so that the table header is bold, the second colomn in the table is blue and the table footer Total and Sum are bold and red.
+        </li>
+        <li>
+            After this is completed review and refactor you code. Extra points are for mobile responsive layouts.
+        </li>
+        <li>
+            Submit a push request back to the original repo.
+        </li>
+    </ol>
+</div>
+<div>
+    <table *ngIf="!error">
+        <thead>
+            <tr>
+                <th>
+                    Neighborhood
+                </th>
+                <th>
+                    Vacancies
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of distinctArray; index as i;">
+                <td>
+                    {{ data.neighborhood }}
+                </td>
+                <td>
+                    {{ data.vacancies }}
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>
+                    Sum
+                </td>
+                <td>
+                    {{ total }}
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    <div *ngIf="error">
+        {{ error }}
+    </div>
+</div>
