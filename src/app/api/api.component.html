@@ -20,6 +20,9 @@
             Style the table so that the table header is bold, the second colomn in the table is blue and the table footer Total and Sum are bold and red.
         </li>
         <li>
+            If data does not come back, add an error handler to display "Something went wrong" in the middle of the page.
+        </li>
+        <li>
             After this is completed review and refactor you code. Extra points are for mobile responsive layouts.
         </li>
         <li>
@@ -28,39 +31,5 @@
     </ol>
 </div>
 <div>
-    <table *ngIf="!error">
-        <thead>
-            <tr>
-                <th>
-                    Neighborhood
-                </th>
-                <th>
-                    Vacancies
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let data of distinctArray; index as i;">
-                <td>
-                    {{ data.neighborhood }}
-                </td>
-                <td>
-                    {{ data.vacancies }}
-                </td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td>
-                    Sum
-                </td>
-                <td>
-                    {{ total }}
-                </td>
-            </tr>
-        </tfoot>
-    </table>
-    <div *ngIf="error">
-        {{ error }}
-    </div>
+    <!-- PUT TABLE API HERE -->
 </div>

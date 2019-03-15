@@ -5,13 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BioComponent } from './bio/bio.component';
-import { ApiComponent } from './api/api.component';
+//issue
 
 @NgModule({
   declarations: [
     AppComponent,
-    BioComponent,
-    ApiComponent
+    BioComponent
   ],
   imports: [
     BrowserModule,

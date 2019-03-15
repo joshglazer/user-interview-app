@@ -7,23 +7,11 @@ import { ConfigService } from '../config/config.service';
     styleUrls: ['./api.component.scss']
 })
 export class ApiComponent implements OnInit {
-    distinctArray = [];
-    error;
-    total;
     
     constructor(private service: ConfigService) { }
     
-    externalLink: string = 'https://data.baltimorecity.gov/resource/qqcv-ihn5.json';
-    
     showConfig() {
-        this.service.getConfig(this.externalLink)
-        .subscribe(
-            (data) => { 
-                this.newArray(data);
-            },
-            (error) => {
-                this.error = error;
-            });
+        // Call API here
     }
 
     ngOnInit() {
@@ -31,23 +19,6 @@ export class ApiComponent implements OnInit {
     }
     
     newArray(data){
-        let distinctHood = [...new Set(data.map(x => x.neighborhood))];
-        let distinctCount = [];
-        
-        distinctHood.map( x => {
-            let vacancies = data.filter(y => {
-                return y.neighborhood === x;
-            })
-            
-            this.distinctArray.push({
-                neighborhood: x,
-                vacancies: vacancies.length
-            })
-        });
-        
-        
-        this.total = this.distinctArray.reduce( (acc, val) => {
-            return acc + val.vacancies;
-        }, 0)
+        // Get distinct Array for manipulation here
     }
 }

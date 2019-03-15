@@ -5,8 +5,7 @@ import { BioComponent } from './bio/bio.component';
 import { ApiComponent } from './api/api.component';
 
 const routes: Routes = [
-    { path: '', component: BioComponent, pathMatch: 'full' },
-    { path: 'api', component: ApiComponent }
+    { path: '', component: BioComponent, pathMatch: 'full' }
 ];
 
 @NgModule({
