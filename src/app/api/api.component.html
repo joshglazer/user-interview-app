@@ -31,6 +31,30 @@
     </ol>
 </div>
 <hr/>
-<div>
-    <!-- PUT TABLE API HERE -->
+<div *ngIf="!error">
+    <table class="neighborhoods">
+        <tr>
+            <th class='neighborhood'>
+                Neighborhood
+            </th>
+            <th class='total'>
+                Vacancies
+            </th>
+        </tr>
+        <tr *ngFor="let vacancy of vacancies">
+            <td class='neighborhood'>
+                {{vacancy['neighborhood']}}
+            </td>
+            <td class='total'>
+                {{vacancy['total']}}
+            </td>
+        </tr>
+        <tr class='totalRow'>
+            <td class='neighborhood'>Total Vacancies</td>
+            <td class='total'>{{ totalVacancies }}</td>
+        </tr>
+    </table>
+</div>
+<div *ngIf="error === true" class="error">
+    Something went wrong
 </div>

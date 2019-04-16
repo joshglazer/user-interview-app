@@ -33,9 +33,13 @@
             {{profile_name}}
         </span>
     </h2>
-    <img src="{{profile_pic}}" width="250px" height="250px" alt=""/>
+    <a href='https://github.com/joshglazer' target='_blank'>
+        <img src="{{profile_pic}}" width="250px" height="250px" alt=""/>
+    </a>
     <div class="bio">
-        <!-- BIO ABOUT YOURSELF -->
+        {{ bio }}
+        <div>
+            <a routerLink="/apiComponent" routerLinkActive="active">Click here to go to the api</a>
+        </div>
     </div>
 </div>
-<!-- Add nav link here -->

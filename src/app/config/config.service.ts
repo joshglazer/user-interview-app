@@ -14,7 +14,7 @@ export class ConfigService {
     };
 
     getConfig(externalLink) {
-        // call api here
+        return this.http.get(externalLink);
     }
     
 }

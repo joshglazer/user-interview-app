@@ -7,11 +7,20 @@ import { ConfigService } from '../config/config.service';
     styleUrls: ['./api.component.scss']
 })
 export class ApiComponent implements OnInit {
-    
+    vacancies = [];
+    totalVacancies = 0;
+    error = false;
+
     constructor(private service: ConfigService) { }
     
     showConfig() {
-        // Call API here
+        this.service.getConfig('https://data.baltimorecity.gov/resource/qqcv-ihn5.json')
+            .subscribe(
+            (data) => {
+                this.newArray(data);
+            },
+            error => { this.error = true; } // error path
+        );
     }
 
     ngOnInit() {
@@ -19,6 +28,18 @@ export class ApiComponent implements OnInit {
     }
     
     newArray(data){
-        // Get distinct Array for manipulation here
+        for (let i = 0; i < data.length; i++) {
+            this.totalVacancies++;
+            const item = data[i];
+            const currentNeighborhoods = this.vacancies.filter(word => word.neighborhood === item['neighborhood']);
+            if (currentNeighborhoods.length) {
+                currentNeighborhoods[0].total += 1;
+            } else {
+                this.vacancies.push({
+                    neighborhood: item['neighborhood'],
+                    total: 1,
+                })
+            }
+        }
     }
 }
